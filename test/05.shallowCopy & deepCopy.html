@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // 數字、字串、布林值的等號都是設定"值；其他的都是設定"參照"
+
+        const ar = [2, 4, 6, 8, { name: 'vic', age: 20 }];
+
+        // 淺層拷貝
+        const br = [...ar];
+
+        // 深層拷貝
+        // 先stringify轉成字串
+        // JSON.parse: 將json字串轉成物件或陣列
+        const cr = JSON.parse(JSON.stringify(ar));
+
+        ar[1] = 100;
+        console.log(ar);
+        console.log(br);
+        console.log(cr);
+        console.log('----');
+        ar[4].name = 'david';
+        console.log(ar);
+        console.log(br);
+        console.log(cr);
+        console.log('----');
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -9,8 +9,8 @@
 
 <body>
     <input type="number" id="a"> + <input type="number" id="b">
-    <button onclick="doAjax">=</button>
-    <span></span>
+    <button onclick="doAjax()">=</button>
+    <span id="result"></span>
 
 
     <script>
@@ -25,11 +25,17 @@
                 // fetch要兩個then
                 // 把拿到的資料解析成json
                 .then(function (r) {
-                    return r.json()
+                    return r.json();
                 })
-                // 箭頭函式寫法
-                // .then(r => r.json())
-                .then(obj)
+
+                /*
+                箭頭函式寫法
+                .then(r => r.json())
+                */
+
+                .then(obj => {
+                    document.querySelector('#result').innerHTML = obj.answer;
+                })
         }
 
 

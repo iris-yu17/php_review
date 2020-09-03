@@ -1,6 +1,7 @@
 <?php
-$a = isset($_GET['a']) ? $_GET['a'] : 0;
-$b = isset($_GET['b']) ? $_GET['b'] : 0;
+// 如果有設定: 轉成整數，沒有設定: 傳0
+$a = isset($_GET['a']) ? intval($_GET['a']) : 0;
+$b = isset($_GET['b']) ? intval($_GET['b']) : 0;
 
 // 用json格式
 // 寫法一:用點連接字串
