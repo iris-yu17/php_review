@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a"> + <input type="number" id="b">
+    <button onclick="doAjax">=</button>
+    <span></span>
+
+
+    <script>
+        const a = document.querySelector('#a');
+        const b = document.querySelector('#b');
+
+        function doAjax() {
+            const a1 = a.value;
+            const b1 = b.value;
+            // js樣板字串${}要用backtick包起來
+            fetch(`04.plus_api.php ? a=${a1}& b=${b1}`)
+                // fetch要兩個then
+                // 把拿到的資料解析成json
+                .then(function (r) {
+                    return r.json()
+                })
+                // 箭頭函式寫法
+                // .then(r => r.json())
+                .then(obj)
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
