@@ -23,8 +23,8 @@
             // js樣板字串${}要用backtick包起來
             fetch(`04.plus_api.php ? a=${a1}& b=${b1}`)
                 // fetch要兩個then
-                // 把拿到的資料解析成json
-                .then(function (r) {
+                // 把拿到的資料r解析成json
+                .then(function ( r) {
                     return r.json();
                 })
 

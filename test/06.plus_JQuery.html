@@ -21,13 +21,17 @@
     <script>
         // JQuery的ajax用法
         function doAjax() {
+
             // JQuery的物件是用$表示
             // get(url[,data][,sucess][,dataType])
             // get(傳給誰[,資料內容][,callback function][,回傳的資料類型])
-            // callback function: function(這邊是回傳的內容)
-            $.get('04.plus_api.php', $(document.form1), function (data) {
-                console.log(data)
-            });
+            // callback function: function(裡面是回傳的內容)
+            // document.form1=document.querySelector('form[name=form1]')
+            // $(document.form1)把抓到的表單包成jQuery物件，serialize()會去找表單內有幾個元素(輸入欄)，做序列畫
+            $.get('04.plus_api.php', $(document.form1).serialize(), function (data) {
+                console.log(data);
+                document.querySelector('#result').innerHTML = data.answer;
+            }, 'json');
         }
 
 
