@@ -38,6 +38,40 @@ if ($totalRows > 0) {
 <?php include __DIR__ . '/parts/__html_head.php' ?>
 <?php include __DIR__ . '/parts/__navbar.php' ?>
 <div class="container">
+    <div class="row">
+        <div class="col">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+
+                    <!-- class="disabled" 按鈕不能按 -->
+                    <!-- page=1時，秀disabled -->
+                    <li class="page-item <?= $page == 1 ? 'disabled' : '' ?>">
+                        <a class="page-link" href="?page=<?= $page - 1 ?>">
+                            <i class="fas fa-arrow-circle-left"></i>
+                        </a>
+                    </li>
+
+                    <!-- 用for loop做分頁數 -->
+                    <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
+
+                        <!-- class="active" 會反白 -->
+                        <li class="page-item <?= $i == $page ? 'active' : '' ?>">
+                            <!-- href給問號，代表是同一頁面，給不同參數 -->
+                            <a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a>
+                        </li>
+                    <?php endfor; ?>
+
+                    <!-- page= $totalPages時，秀disabled -->
+                    <li class="page-item <?= $page == $totalPages ? 'disabled' : '' ?>">
+                        <a class="page-link" href="?page=<?= $page + 1 ?>">
+                            <i class="fas fa-arrow-circle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
     <table class="table table-striped">
         <thead>
             <tr>

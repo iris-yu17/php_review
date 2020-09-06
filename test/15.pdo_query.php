@@ -1,4 +1,4 @@
-<!-- 撈資料 -->
+<!-- 撈資料test -->
 
 <?php
 // require __.connect_db.php 就可以使用檔案裡的$pdo變數
