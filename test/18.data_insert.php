@@ -13,7 +13,7 @@ require __DIR__ . '/parts/__.connect_db.php';
                 <div class="card-body">
                     <h5 class="card-title">新增資料</h5>
 
-                    <!-- checkform檢查資料格式，若return flase就送不出去 -->
+                    <!-- return flase送不出去 -->
                     <form name="form1" onsubmit="checkForm();">
                         <div class="form-group">
                             <!-- label的for是對應input的id -->
@@ -73,9 +73,11 @@ require __DIR__ . '/parts/__.connect_db.php';
                 // body是要送的資料
                 body: fd
             })
+
+
             // 傳字串用text
             .then(r => r.text())
-            // 
+            // r.text()=str
             .then(str => {
                 console.log(str);
             });

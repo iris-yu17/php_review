@@ -22,6 +22,6 @@ $stmt->execute([
 ]);
 
 
-// 算有幾個Row
+// 算有幾個Row(輸入幾筆資料)
 echo $stmt->rowCount();
 echo 'ok';
