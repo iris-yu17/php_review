@@ -84,7 +84,7 @@ if ($totalRows > 0) {
                 <th scope="col">name</th>
                 <th scope="col">email</th>
                 <th scope="col">mobile</th>
-                <th scope="col">birthday</th>
+                <th scope="col">birthdate</th>
                 <th scope="col">address</th>
                 <th scope="col">created_at</th>
             </tr>
